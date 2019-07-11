@@ -1,0 +1,4 @@
+{
+  "env": "production",
+  "app_url": "https://myplugin.io"
+}

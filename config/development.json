@@ -1,0 +1,10 @@
+{
+  "extension_human_name": "MyPlugin [DEV]",
+  "extension_safari_id": "io.myplugin.extension.dev",
+  "extension_gecko_id": "dev@scaleupconsulting.com",
+  "env": "development",
+  "app_url": "https://myplugin.tk:3000",
+  "encryption_enabled": false,
+  "min_watch_seconds": "2",
+  "max_watch_seconds": "10"
+}

@@ -1,0 +1,7 @@
+{
+  "extension_human_name": "MyPlugin [STG]",
+  "extension_safari_id": "io.myplugin.extension.stg",
+  "extension_gecko_id": "stg@scaleupconsulting.com",
+  "env": "staging",
+  "app_url": "https://myplugin.co"
+}
