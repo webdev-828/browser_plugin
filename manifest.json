@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "description": "Browser Plugin",
   "icons": {
-    "40": "icons/icon40.png",
+    "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
   "background": {
