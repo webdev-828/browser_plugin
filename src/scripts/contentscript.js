@@ -4,11 +4,7 @@ import $ from 'jquery'
 
 const CURRENT_HREF = window.location.href;
 const browser = ['chrome', 'opera', 'firefox'].indexOf(platform) > -1 ? chrome : window.browser;
-
-console.log(browser);
-
 let togglerDragStart = false;
-
 const wrapper = document.createElement('div');
 wrapper.setAttribute('style', `
     position: fixed;
@@ -25,18 +21,13 @@ wrapper.setAttribute('style', `
     box-shadow: -3px 0px 20px -10px rgba(0,0,0,0.75);
     transition: right 0.2s ease 0s;
 `);
-
 wrapper.innerHTML = `
     <iframe id="climberPlugin" style="height:100%; width: 100%;"></iframe>
 `;
-
 const toggler = document.createElement('div');
 toggler.style.display = "none";
-
 let topMargin = 10;
-
 browser.storage.local.get(['ClimberTogglerTopMargin'], result => topMargin = result.ClimberTogglerTopMargin || 10);
-
 setTimeout(() => {
     toggler.setAttribute('style', `
         position: fixed;
@@ -53,16 +44,13 @@ setTimeout(() => {
         top: ${topMargin}px;
     `);
 }, 200);
-
 let iconSrc = browser.extension.getURL("../images/icon.png");
 let draggerSrc = browser.extension.getURL("../images/arrow-tab.png");
-
 toggler.innerHTML = `
     <div style="z-index: 2147483647; position: absolute; background: white; height: 36px;">
         <img src="${iconSrc}" style="width: 100%; " draggable="false">
     </div>
 `;
-
 const mover = document.createElement('div');
 mover.setAttribute('style', `
     position: absolute;
@@ -77,34 +65,27 @@ mover.setAttribute('style', `
     z-index: 2147483645 !important; 
     transition: left 0.5s ease 0s;
 `);
-
 mover.innerHTML = `
     <img src="${draggerSrc}" draggable="false" style="height: 100%;">
 `;
-
 toggler.appendChild(mover);
-
 const isOpened = () => ! Boolean(parseInt(wrapper.style.right));
-
 const openApp = (number = null) => {
     if (number) {
         console.log("Send SMS to this number: " + number);
         //redirect iframe to send SMS url
     }
-
     if (! isOpened()){
         wrapper.style.right = "0px";
         toggler.style.right = '400px';
     }
 }
-
 const closeApp = () => {
     if (isOpened()){
         wrapper.style.right = "-400px";
         toggler.style.right = '0px';
     }
 }
-
 toggler.addEventListener('click', () => {
         if (isOpened()) {
             closeApp();
@@ -112,13 +93,11 @@ toggler.addEventListener('click', () => {
             openApp();
         }
 });
-
 toggler.addEventListener('mouseenter', () => mover.style.left = "-20px");
 toggler.addEventListener('mouseleave', () => {
     if (! togglerDragStart)
         mover.style.left = "0px";
 });
-
 mover.addEventListener('click', e => e.stopPropagation())
 mover.addEventListener('mousedown', () => togglerDragStart = true);
 document.addEventListener('mouseup', () => {
@@ -134,46 +113,14 @@ document.addEventListener('mousemove', evt => {
         toggler.style.top = (top) + 'px';
     }
 });
-
 document.body.appendChild(wrapper);
 document.body.appendChild(toggler);
-
 const iframe = document.getElementById("climberPlugin");  
-iframe.src = browser.extension.getURL("../index.html");
+iframe.src = browser.extension.getURL("main.html");
 iframe.frameBorder = 0;
-
 browser.runtime.onMessage.addListener(request => {
     switch(request.type) {
         case 'openApp' :  openApp(); break;
         case 'closeApp' : closeApp(); break;
     }
 });
-
-// function walkTheDOM(node, func) {
-//     func(node);
-//     node = node.firstChild;
-//     while (node) {
-//         walkTheDOM(node, func);
-//         node = node.nextSibling;
-//     }
-// }
-
-// const regex = /(\+1[-./ ]?|[1][-./ ]?)?((\(\d{3}\)?)|(\d{3}))([\s-./]?)(\d{3})([\s-./]?)(\d{4})/g;
-// const iconSmsUrl = browser.extension.getURL('../images/icon-sms.png');
-
-// walkTheDOM(document.body, function (node) {
-//     if (node.nodeType === 3) { // Is it a Text node?
-//         var text = node.data.trim();
-//         if (text.length > 0 && regex.test(text)) { // Does it have non white-space text content?
-//             node.parentNode.innerHTML = text.replace(regex, "<div class='postings-wrapper'><img class='postings-sms-icon' src='"+iconSmsUrl+"'><span class='postings-wrapped-phone-number'>$&</span></div>");
-//         }
-//     }
-// });
-
-// document.addEventListener('click', evt => {
-//     if (evt.target && evt.target.classList.contains('postings-wrapped-phone-number')) {
-//         const number = evt.target.innerHTML;
-//         openApp(number);
-//         // evt.preventDefault(); //IF NEEDED
-//     }
-// })

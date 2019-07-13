@@ -174,12 +174,14 @@ function buildJS(environment, browser) {
     const files = [
         'background.js',
         'contentscript.js',
-        'popup.js'
+        'popup.js',
+        'main.js'
     ]
 
     if (!safariNativeExtension) {
         files.push('background_bootstrap.js');
         files.push('popup_bootstrap.js');
+        files.push('main_bootstrap.js');
     }
 
     if (chromeBrowser && developmentMode) {

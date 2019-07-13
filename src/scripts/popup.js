@@ -1,5 +1,5 @@
 import isUndefined from 'lodash.isundefined';
-import platform from 'utils/platform'
+import platform from 'utils/platform';
 import Vue from 'vue';
 import App from './popup/App.vue';
 
