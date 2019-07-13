@@ -1,17 +1,19 @@
 <template>
-    <div class="laymain">
+    <div class="layout">
         <a href="#">Main Page</a>
     </div>
 </template>
 
 <script>
+// import platform from 'utils/platform';
+// console.log(platform);
 export default {
     
 }
 </script>
 
 <style scoped>
-    .laymain {
+    .layout {
         background-color: white;
         height: 100px;
         width: 100px;
