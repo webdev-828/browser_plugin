@@ -6,7 +6,7 @@ import App from './content/App.vue';
 const DATA = {};
 
 new Vue({
-    el: '#content',
+    el: '#main',
     data: DATA,
     components: { App },
 });

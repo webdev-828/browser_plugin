@@ -1,24 +1,28 @@
 <template>
     <div class="layout">
-        <a href="#">Main Page</a>
+        <div class="toolbar">
+            <Toolbar></Toolbar>
+        </div>
+        <div>
+            <div class="content"></div>
+            <div class="navbar"></div>
+        </div>
     </div>
 </template>
 
 <script>
-// import platform from 'utils/platform';
-// console.log(platform);
+import Toolbar from './components/Toobar.vue';
+import Content from './components/Content.vue';
+import Navbar from './components/Navbar.vue';
+
 export default {
-    
+    components: {
+        Toolbar,
+        Content,
+        Navbar,        
+    }
 }
 </script>
 
 <style scoped>
-    .layout {
-        background-color: white;
-        height: 100px;
-        width: 100px;
-        font-size: 14px;
-        display: flex;
-        flex-direction: column;
-    }
 </style>
