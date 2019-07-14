@@ -1,6 +1,5 @@
 <template>
     <div class="content-component">
-
     </div>
 </template>
 

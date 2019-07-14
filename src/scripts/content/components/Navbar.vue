@@ -1,6 +1,6 @@
 <template>
     <div class="nav-component">
-
+        
     </div>
 </template>
 
@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style scoped>
-    .nav-components {
+    .nav-component {
         width: 55px;
         height: 100%;
-        background-color: #1497ff;
+        background-color: yellow;
     }
 </style>
