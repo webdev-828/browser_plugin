@@ -12,7 +12,7 @@ wrapper.setAttribute('style', `
     right: -400px;
     bottom: 0;
     width: 400px;
-    background: black;
+    background: white;
     color: white;
     z-index: 2147483647;
     overflow-y: hidden;

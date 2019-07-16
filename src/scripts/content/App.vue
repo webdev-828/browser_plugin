@@ -4,8 +4,8 @@
             <Toolbar></Toolbar>
         </div>
         <div>
-            <Content class="inline"></Content>
-            <Navbar class="inline"></Navbar>
+            <Content></Content>
+            <Navbar></Navbar>
         </div>
     </div>
 </template>
@@ -25,7 +25,4 @@ export default {
 </script>
 
 <style scoped>
-    .inline {
-        display: inline;
-    }
 </style>

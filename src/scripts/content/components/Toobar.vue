@@ -1,6 +1,6 @@
 <template>
     <div class="toolbar-component">
-        <div class="toolbar-component-title">Climber.com Career Manager</div>
+        <div class="toolbar-component-title white-text ml-10">Climber.com Career Manager</div>
     </div>
 </template>
 
@@ -25,7 +25,5 @@ export default {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        color: white;
-        margin-left: 20px;
     }
 </style>
