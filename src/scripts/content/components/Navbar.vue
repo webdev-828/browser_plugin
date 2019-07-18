@@ -4,9 +4,11 @@
             v-for="nav in navs" 
             :key="nav.navID"
             :href="nav.navLink"
+            :style="{backgroundColor: nav.backColor}"
             :class="[nav.isActive ? activeClass : '', nonactiveClass]"
             @click="navClick(nav)"
-            @mouseover="navOver()"
+            @mouseover="navOver(nav)"
+            @mouseleave="navBlue(nav)"
         >
             <i aria-hidden="true" :class="iconClass">{{nav.navIcon}}</i>
         </a>
@@ -20,28 +22,28 @@ export default {
             {
                 navID: 0,
                 isActive: true,
-                isOver: false,
+                backColor: '',
                 navLink: "#/home",
                 navIcon: "home"
             },
             {
                 navID: 1,
                 isActive: false,
-                isOver: false,
+                backColor: '',
                 navLink: "#/jobs",
                 navIcon: "work"
             },
             {
                 navID: 2,
                 isActive: false,
-                isOver: false,
+                backColor: '',
                 navLink: "#/contacts",
                 navIcon: "contacts"
             },
             {
                 navID: 3,
                 isActive: false,
-                isOver: false,
+                backColor: '',
                 navLink: "#/activity",
                 navIcon: "list"
             }
@@ -62,13 +64,27 @@ export default {
             for (let index = 0; index <= 3; index++) {
                 if (index == nav.navID) {
                     this.navs[index].isActive = true;
+                    this.navs[index].backColor = "";
                 } else {
                     this.navs[index].isActive = false;
                 }       
             }
         },
-        navOver() {
-            console.log(this);
+        navOver(nav) {
+            if (nav.isActive) {
+                return;
+            }
+            for (let index = 0; index <= 3; index++) {
+                if (index == nav.navID) {
+                    this.navs[index].backColor = "grey";
+                }
+                else {
+                    this.navs[index].backColor = "";
+                }                
+            }
+        },
+        navBlue(nav) {
+            this.navs[nav.navID].backColor = "";
         }
     }
 }
