@@ -26,16 +26,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <hr class="v-divider v-divider--inset theme--light">
-                <div role="listitem">
-                    <div class="v-list__tile theme--light">
-                        <div class="v-list__tile__action">
-                            <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">mail</i>
-                        </div>
-                        <div class="v-list__tile__content">
-                            <div class="v-list__tile__title">mcob@postings.com</div>
-                            <div class="v-list__tile__sub-title">Work Email</div>
+                    <hr class="v-divider v-divider--inset theme--light">
+                    <div role="listitem">
+                        <div class="v-list__tile theme--light">
+                            <div class="v-list__tile__action">
+                                <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">mail</i>
+                            </div>
+                            <div class="v-list__tile__content">
+                                <div class="v-list__tile__title">mcob@postings.com</div>
+                                <div class="v-list__tile__sub-title">Work Email</div>
+                            </div>
                         </div>
                     </div>
                 </div>
