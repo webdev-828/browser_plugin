@@ -1,3 +1,36 @@
+.application {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-family: Roboto,sans-serif;
+    line-height: 1.5;
+}
+.theme--light .application {
+    background: #fafafa;
+    color: rgba(0, 0, 0, .87);
+}
+.application--wrap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+}
+@media only screen and (max-width: 959px) {
+    .v-toolbar__content, .v-toolbar__extension {
+        padding: 0 16px !important;
+    }
+}
 .black-text {
     color: black !important;
 }
@@ -11,7 +44,7 @@
 }
 
 .mb-0 {
-    margin-bottom: 0px;
+    margin-bottom: 0rem;
 }
 
 .p-10 {
@@ -20,49 +53,18 @@
 
 .pt-15 {
     padding-top: 1.5rem;
-}
-
-.headline {
-    font-size: 24px !important;
-    line-height: 32px !important;
-    font-weight: 400 !important;
-}
-
-.v-icon {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-font-feature-settings: "liga";
-    font-feature-settings: "liga";
-    font-size: 24px;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    line-height: 1;
-    -webkit-transition: .3s cubic-bezier(.25,.8,.5,1);
-    transition: .3s cubic-bezier(.25,.8,.5,1);
-    vertical-align: text-bottom;
-}
-
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-}
-
-.indigo-text {
+} 
+.indigo--text {
     color: #3f51b5!important;
     caret-color: #3f51b5!important;
+}
+.white {
+    background-color: white;
+}
+.blue {
+    background-color: #1497ff;
+}
+.grey {
+    background-color: #9e9e9e!important;
+    border-color: #9e9e9e!important;
 }

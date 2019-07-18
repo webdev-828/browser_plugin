@@ -1,34 +1,42 @@
 <template>
-    <div class="content-component">
-        <div class="titlebar">
-            <div class="titlebar-content black-text ml-10">Mike's career Dashboard</div>
-        </div>
-        <div class="content"></div>
-        <div class="card sheet theme-light">
-            <div class="card-title pt-15">
-                <div>
-                    <h3 class=" headline mb-0 black-text">Mike O'Brien</h3>
-                    <div>San Diego</div>
+    <div>
+        <div class="v-card v-sheet theme--light">
+            <nav class="v-toolbar theme--dark grey lighten-5 black-text" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);" data-booted="true">
+                <div class="v-toolbar__content" style="height: 56px;">
+                    <div class="v-toolbar__title">Mike's Career Dashboard</div>
                 </div>
-            </div>
-            <div class="list">
-                <div class="list-item-tile">
-                    <div class="list-item-tile-action">
-                        <i aria-hidden="true" class="v-icon material-icons indigo-text">phone</i>
-                    </div>
-                    <div class="list-item-tile-content">
-                        <div class="list-item-tile-title">(650) 555-1234</div>
-                        <div class="list-item-tile-sub-title">Mobile</div>
+            </nav>
+            <div></div>
+            <div>
+                <div class="v-card__title v-card__title--primary">
+                    <div>
+                        <h3 class="headline mb-0">Mike O'Brien</h3>
+                        <div>San Diego</div>
                     </div>
                 </div>
-                <hr>
-                <div class="list-item-tile">
-                    <div class="list-item-tile-action">
-                        <i aria-hidden="true" class="v-icon material-icons indigo-text">mail</i>
+                <div role="list" class="v-list v-list--two-line theme--light">
+                    <div role="listitem">
+                        <div class="v-list__tile theme--light">
+                            <div class="v-list__tile__action">
+                                <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">phone</i>
+                            </div>
+                            <div class="v-list__tile__content">
+                                <div class="v-list__tile__title">(650) 555-1234</div>
+                                <div class="v-list__tile__sub-title">Mobile</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="list-item-tile-content">
-                        <div class="list-item-tile-title">mcob@postings.com</div>
-                        <div class="list-item-tile-sub-title">Work Email</div>
+                </div>
+                <hr class="v-divider v-divider--inset theme--light">
+                <div role="listitem">
+                    <div class="v-list__tile theme--light">
+                        <div class="v-list__tile__action">
+                            <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">mail</i>
+                        </div>
+                        <div class="v-list__tile__content">
+                            <div class="v-list__tile__title">mcob@postings.com</div>
+                            <div class="v-list__tile__sub-title">Work Email</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,18 +51,73 @@ export default {
 </script>
 
 <style scoped>
-    .content-component {
-        width: 345px;
-        height: 100%;
+    .theme--light.v-sheet {
+        background-color: #fff;
+        border-color: #fff;
+        color: rgba(0,0,0,.87);
     }
-    .titlebar{
+
+    .theme--light.v-card {
+        background-color: #fff;
+        border-color: #fff;
+        color: rgba(0,0,0,.87);
+    }
+    .v-sheet {
+        display: block;
+        border-radius: 2px;
+        position: relative;
+        -webkit-transition: .3s cubic-bezier(.25,.8,.5,1);
+        transition: .3s cubic-bezier(.25,.8,.5,1);
+    }
+    .v-card {
+        -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+        text-decoration: none;
+    }
+   .v-card>:first-child:not(.v-btn):not(.v-chip) {
+       border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+   }
+   .v-toolbar[data-booted=true] {
+        -webkit-transition: .2s cubic-bezier(.4,0,.2,1);
+        transition: .2s cubic-bezier(.4,0,.2,1);
+    }
+    .theme--dark .v-toolbar {
+        background-color: #212121;
+        color: #fff;
+    }
+    .grey.lighten-5 {
+        background-color: #fafafa!important;
+        border-color: #fafafa!important;
+    }
+    .v-toolbar {
+        -webkit-transition: none;
+        transition: none;
+        -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+        position: relative;
         width: 100%;
-        height: 56px;
-        background-color: white;
-        display: flex;
-        align-items: center;
+        will-change: padding-left,padding-right;
     }
-    .titlebar-content {
+    nav {
+        display: block;
+    }
+    .v-toolbar__content, .v-toolbar__extension {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0 24px;
+    }
+    .v-toolbar__content>:last-child, .v-toolbar__extension>:last-child {
+        margin-right: 0;
+    }
+    .v-toolbar__content>:first-child, .v-toolbar__extension>:first-child {
+        margin-left: 0;
+    }
+    .v-toolbar__title {
         font-size: 20px;
         font-weight: 500;
         letter-spacing: .02em;
@@ -62,34 +125,62 @@ export default {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    .content {
-        background-color: black;
-        width: 100%;
-        height: 100%
+    .v-card__title--primary {
+        padding-top: 24px;
     }
-    .sheet {
-        display: block;
-        border-radius: 2px;
-        position: relative;
+    .v-card__title {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+    .headline {
+        font-size: 24px !important;
+        line-height: 32px !important;
+    }
+    .display-1, .headline {
+        font-weight: 400;
+        letter-spacing: normal!important;
+        font-family: Roboto,sans-serif!important;
+    }
+    .v-card>:last-child:not(.v-btn):not(.v-chip) {
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+    }
+
+    .theme--light.v-list {
+        background: #fff;
+        color: rgba(0,0,0,.87);
+    }
+    .v-list {
+        list-style-type: none;
+        padding: 8px 0 8px;
         -webkit-transition: .3s cubic-bezier(.25,.8,.5,1);
         transition: .3s cubic-bezier(.25,.8,.5,1);
     }
-    .card {
-        -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-        text-decoration: none;
-        position: absolute;
-        right: 55px;
-        bottom: 0;
-        left: 0;
+    .v-list>div {
+        -webkit-transition: inherit;
+        transition: inherit;
     }
-    .card-title {
-        display: flex;
-        align-items: center;
-        padding: 16px;
+    .theme--light.v-sheet {
+        background-color: #fff;
+        border-color: #fff;
+        color: rgba(0,0,0,.87);
     }
-    .list-item-tile {
+    .theme--light.v-card {
+        background-color: #fff;
+        border-color: #fff;
+        color: rgba(0,0,0,.87);
+    }
+    .v-list--two-line .v-list__tile {
         height: 72px;
+    }
+    .v-list__tile {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -107,19 +198,92 @@ export default {
         -webkit-transition: background .3s cubic-bezier(.25,.8,.5,1);
         transition: background .3s cubic-bezier(.25,.8,.5,1);
     }
-    .list-item-tile-title {
+    .v-list__tile__action {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .v-list__tile__action, .v-list__tile__avatar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        min-width: 56px;
+    }
+    .v-list__tile__action, .v-list__tile__content {
+        height: 100%;
+    }
+    .theme--light .v-icon {
+        color: rgba(0, 0, 0, .54);
+    }
+    .v-icon {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-font-feature-settings: "liga";
+        font-feature-settings: "liga";
+        font-size: 24px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        line-height: 1;
+        -webkit-transition: .3s cubic-bezier(.25,.8,.5,1);
+        transition: .3s cubic-bezier(.25,.8,.5,1);
+        vertical-align: text-bottom;
+    }
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+    }
+    .v-list__tile__content {
+        text-align: left;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .v-list__tile__action--stack, .v-list__tile__content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    }
+    .v-list__tile__action, .v-list__tile__content {
+        height: 100%;
+    }
+    .v-list__tile__title {
         height: 24px;
         line-height: 24px;
         position: relative;
         text-align: left;
     }
-    .list-item-tile .list-item-tile-sub-title {
-        color: rgba(0, 0, 0, 0.54);
-    }
-    .list-item-tile-sub-title {
-        font-size: 14px;
-    }
-    .list-item-tile-sub-title, .list-item-tile-title {
+
+    .v-list__tile__sub-title, .v-list__tile__title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -127,17 +291,41 @@ export default {
         transition: .3s cubic-bezier(.25,.8,.5,1);
         width: 100%;
     }
-    .list-item-tile-content {
-        margin-left: 32px;
+    .v-list__tile__sub-title {
+        color: rgba(0,0,0,.54);
     }
-    .theme-light .sheet {
-        background-color: #fff;
-        border-color: #fff;
-        color: rgba(0,0,0,.87);
+    .v-list__tile__sub-title {
+        font-size: 14px;
     }
-    .theme-light .card {
-        background-color: #fff;
-        border-color: #fff;
-        color: rgba(0,0,0,.87);
-    }    
+    .v-list__tile__sub-title, .v-list__tile__title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-transition: .3s cubic-bezier(.25,.8,.5,1);
+        transition: .3s cubic-bezier(.25,.8,.5,1);
+        width: 100%;
+    }
+    .v-divider--inset:not(.v-divider--vertical) {
+        margin-left: 72px;
+        max-width: calc(100% - 72px);
+    }
+    .theme--light.v-divider {
+        border-color: rgba(0,0,0,.12);
+    }
+    .v-divider {
+        display: block;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+        flex: 1 1 0px;
+        max-width: 100%;
+        height: 0;
+        max-height: 0;
+        border: solid;
+        border-width: thin 0 0 0;
+        -webkit-transition: inherit;
+        transition: inherit;
+    }
+    hr {
+        overflow: visible;
+    }
 </style>
