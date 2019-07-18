@@ -1,42 +1,32 @@
 <template>
     <div>
-        <div class="v-card v-sheet theme--light">
-            <nav class="v-toolbar theme--dark grey lighten-5 black-text" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);" data-booted="true">
-                <div class="v-toolbar__content" style="height: 56px;">
-                    <div class="v-toolbar__title">Mike's Career Dashboard</div>
-                </div>
-            </nav>
-            <div></div>
+        <div class="v-card__title v-card__title--primary">
             <div>
-                <div class="v-card__title v-card__title--primary">
-                    <div>
-                        <h3 class="headline mb-0">Mike O'Brien</h3>
-                        <div>San Diego</div>
+                <h3 class="headline mb-0">Mike O'Brien</h3>
+                <div>San Diego</div>
+            </div>
+        </div>
+        <div role="list" class="v-list v-list--two-line theme--light">
+            <div role="listitem">
+                <div class="v-list__tile theme--light">
+                    <div class="v-list__tile__action">
+                        <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">phone</i>
+                    </div>
+                    <div class="v-list__tile__content">
+                        <div class="v-list__tile__title">(650) 555-1234</div>
+                        <div class="v-list__tile__sub-title">Mobile</div>
                     </div>
                 </div>
-                <div role="list" class="v-list v-list--two-line theme--light">
-                    <div role="listitem">
-                        <div class="v-list__tile theme--light">
-                            <div class="v-list__tile__action">
-                                <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">phone</i>
-                            </div>
-                            <div class="v-list__tile__content">
-                                <div class="v-list__tile__title">(650) 555-1234</div>
-                                <div class="v-list__tile__sub-title">Mobile</div>
-                            </div>
-                        </div>
+            </div>
+            <hr class="v-divider v-divider--inset theme--light">
+            <div role="listitem">
+                <div class="v-list__tile theme--light">
+                    <div class="v-list__tile__action">
+                        <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">mail</i>
                     </div>
-                    <hr class="v-divider v-divider--inset theme--light">
-                    <div role="listitem">
-                        <div class="v-list__tile theme--light">
-                            <div class="v-list__tile__action">
-                                <i aria-hidden="true" class="v-icon material-icons theme--light indigo--text">mail</i>
-                            </div>
-                            <div class="v-list__tile__content">
-                                <div class="v-list__tile__title">mcob@postings.com</div>
-                                <div class="v-list__tile__sub-title">Work Email</div>
-                            </div>
-                        </div>
+                    <div class="v-list__tile__content">
+                        <div class="v-list__tile__title">mcob@postings.com</div>
+                        <div class="v-list__tile__sub-title">Work Email</div>
                     </div>
                 </div>
             </div>
@@ -51,80 +41,6 @@ export default {
 </script>
 
 <style scoped>
-    .theme--light.v-sheet {
-        background-color: #fff;
-        border-color: #fff;
-        color: rgba(0,0,0,.87);
-    }
-
-    .theme--light.v-card {
-        background-color: #fff;
-        border-color: #fff;
-        color: rgba(0,0,0,.87);
-    }
-    .v-sheet {
-        display: block;
-        border-radius: 2px;
-        position: relative;
-        -webkit-transition: .3s cubic-bezier(.25,.8,.5,1);
-        transition: .3s cubic-bezier(.25,.8,.5,1);
-    }
-    .v-card {
-        -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-        text-decoration: none;
-    }
-   .v-card>:first-child:not(.v-btn):not(.v-chip) {
-       border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-   }
-   .v-toolbar[data-booted=true] {
-        -webkit-transition: .2s cubic-bezier(.4,0,.2,1);
-        transition: .2s cubic-bezier(.4,0,.2,1);
-    }
-    .theme--dark .v-toolbar {
-        background-color: #212121;
-        color: #fff;
-    }
-    .grey.lighten-5 {
-        background-color: #fafafa!important;
-        border-color: #fafafa!important;
-    }
-    .v-toolbar {
-        -webkit-transition: none;
-        transition: none;
-        -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-        position: relative;
-        width: 100%;
-        will-change: padding-left,padding-right;
-    }
-    nav {
-        display: block;
-    }
-    .v-toolbar__content, .v-toolbar__extension {
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        padding: 0 24px;
-    }
-    .v-toolbar__content>:last-child, .v-toolbar__extension>:last-child {
-        margin-right: 0;
-    }
-    .v-toolbar__content>:first-child, .v-toolbar__extension>:first-child {
-        margin-left: 0;
-    }
-    .v-toolbar__title {
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: .02em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
     .v-card__title--primary {
         padding-top: 24px;
     }
@@ -148,11 +64,6 @@ export default {
         letter-spacing: normal!important;
         font-family: Roboto,sans-serif!important;
     }
-    .v-card>:last-child:not(.v-btn):not(.v-chip) {
-        border-bottom-left-radius: inherit;
-        border-bottom-right-radius: inherit;
-    }
-
     .theme--light.v-list {
         background: #fff;
         color: rgba(0,0,0,.87);
@@ -167,16 +78,7 @@ export default {
         -webkit-transition: inherit;
         transition: inherit;
     }
-    .theme--light.v-sheet {
-        background-color: #fff;
-        border-color: #fff;
-        color: rgba(0,0,0,.87);
-    }
-    .theme--light.v-card {
-        background-color: #fff;
-        border-color: #fff;
-        color: rgba(0,0,0,.87);
-    }
+
     .v-list--two-line .v-list__tile {
         height: 72px;
     }

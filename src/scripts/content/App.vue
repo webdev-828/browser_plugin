@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import Toolbar from './components/Toobar.vue';
-import Content from './components/Content.vue';
-import Navbar from './components/Navbar.vue';
+import Toolbar from './screens/Toolbar.vue';
+import Content from './screens/Content.vue';
+import Navbar from './screens/Navbar.vue';
 
 export default {
     components: {
