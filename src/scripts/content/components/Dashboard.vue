@@ -2,7 +2,7 @@
     <div>
         <nav class="v-toolbar theme--dark grey lighten-5 black--text" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);" data-booted="true">
             <div class="v-toolbar__content" style="height: 56px;">
-                <div class="v-toolbar__title">Mike's Career Dashboard</div>
+                <div class="v-toolbar__title">{{ title }}</div>
             </div>
         </nav>
         <div class="v-responsive v-image">
@@ -37,6 +37,7 @@
 <script>
 export default {
     data: ()=> ({
+        title: "Mike's Career Dashboard",
         details: [
             {
                 id: 0,
