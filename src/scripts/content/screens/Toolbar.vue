@@ -1,6 +1,6 @@
 <template>
     <div class="v-toolbar__content" id="v-toolbar__content" style="height: 56px">
-        <div class="v-toolbar__title white-text">{{ plugin_name }}</div>
+        <div class="v-toolbar__title white--text">{{ plugin_name }}</div>
     </div>
 </template>
 

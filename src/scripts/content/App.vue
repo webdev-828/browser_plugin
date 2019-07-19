@@ -1,5 +1,7 @@
 <template>
-    <div class="application--wrap">
+    <div
+        class="application--wrap"
+    >
         <div class="main-grid">
             <nav class="v-toolbar theme--dark blue" id="toolbar" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);" data-booted="true">
                 <Toolbar></Toolbar>
@@ -24,7 +26,7 @@ export default {
         Toolbar,
         Content,
         Navbar,        
-    }
+    },
 }
 </script>
 

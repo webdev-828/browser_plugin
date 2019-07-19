@@ -1,7 +1,6 @@
 <template>
     <div>
         <div class="v-card v-sheet theme--light">
-            <Title></Title>
             <Dashboard></Dashboard>
             <Card></Card>
         </div>
@@ -9,14 +8,14 @@
 </template>
 
 <script>
-import Title from './../components/Title.vue';
 import Dashboard from './../components/Dashboard.vue';
+import Jobs from './../components/Jobs.vue';
 import Card from './../components/Card.vue';
 
 export default {
     components: {
-        Title,
         Dashboard,
+        Jobs,
         Card,        
     }
 }

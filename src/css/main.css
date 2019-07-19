@@ -1,3 +1,13 @@
+#climberPluginbody:hover {
+    overflow: scroll;
+}
+#climberPluginbody {
+    margin-top: 0px; 
+    margin-left: 0px; 
+    margin-bottom: 0px; 
+    margin-right: 0px; 
+    overflow: hidden;
+}
 .application {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -31,14 +41,22 @@
         padding: 0 16px !important;
     }
 }
-.black-text {
+.black--text {
     color: black !important;
+    caret-color: black !important;
 }
-
-.white-text {
+.white--text {
     color: white !important;
+    caret-color: white !important;
 }
-
+.indigo--text {
+    color: #3f51b5!important;
+    caret-color: #3f51b5!important;
+}
+.blue--text {
+    color: #0059b3!important;
+    caret-color: #0059b3!important;
+}
 .ml-10 {
     margin-left: 1rem;
 }
@@ -50,14 +68,15 @@
 .p-10 {
     padding: 1rem;
 }
-
+.pl-10 {
+    padding-left: 1rem;
+}
+.pr-10 {
+    padding-right: 1rem;
+}
 .pt-15 {
     padding-top: 1.5rem;
 } 
-.indigo--text {
-    color: #3f51b5!important;
-    caret-color: #3f51b5!important;
-}
 .white {
     background-color: white;
 }
