@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="v-card v-sheet theme--light">
+            <Title :title="title"></Title>
             <Dashboard></Dashboard>
             <Card></Card>
         </div>
@@ -8,16 +9,25 @@
 </template>
 
 <script>
+import Title from './../components/Title.vue';
 import Dashboard from './../components/Dashboard.vue';
 import Jobs from './../components/Jobs.vue';
+import Contacts from './../components/Contacts.vue';
+import Log from './../components/Log.vue';
 import Card from './../components/Card.vue';
 
 export default {
     components: {
+        Title,
         Dashboard,
         Jobs,
+        Contacts,
+        Log,
         Card,        
-    }
+    },
+    data:()=> ({
+        title: "Mike's Career Dashboard",
+    })
 }
 </script>
 
