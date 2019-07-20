@@ -2,14 +2,16 @@ import isUndefined from 'lodash.isundefined';
 import platform from 'utils/platform';
 import Vue from 'vue';
 import App from './content/App.vue';
+import store from './store/store.js';
 import $ from 'jquery'
 
 const DATA = {};
 
 new Vue({
-    el: '#main',
-    data: DATA,
-    components: { App },
+  store,
+  el: '#main',
+  data: DATA,
+  components: { App },
 });
 
 if (platform === 'safari_deprecated') {

@@ -1,9 +1,27 @@
 <template>
     <div>
         <div class="v-card v-sheet theme--light">
-            <Title :title="title"></Title>
-            <Dashboard></Dashboard>
-            <Card></Card>
+            <template>
+                <Title :myProp="title"></Title>
+            </template>        
+            <template>
+                <template v-if="activeCmp == 0">
+                    <Dashboard></Dashboard>
+                </template>
+                <template v-else-if="activeCmp == 1">
+                    <Jobs></Jobs>
+                </template>
+                <template v-else-if="activeCmp == 2">
+                    <Contacts></Contacts>
+                </template>
+                <template v-else-if="activeCmp == 3">
+                    <Logs></Logs>
+                </template>
+            </template>
+            <template>
+                <Card></Card>
+            </template>
+            
         </div>
     </div>
 </template>
@@ -13,7 +31,7 @@ import Title from './../components/Title.vue';
 import Dashboard from './../components/Dashboard.vue';
 import Jobs from './../components/Jobs.vue';
 import Contacts from './../components/Contacts.vue';
-import Log from './../components/Log.vue';
+import Logs from './../components/Logs.vue';
 import Card from './../components/Card.vue';
 
 export default {
@@ -22,12 +40,17 @@ export default {
         Dashboard,
         Jobs,
         Contacts,
-        Log,
+        Logs,
         Card,        
     },
     data:()=> ({
         title: "Mike's Career Dashboard",
-    })
+    }),
+    computed: {
+        activeCmp() {
+            return this.$store.getters.compNum;
+        }
+    }
 }
 </script>
 

@@ -49,14 +49,11 @@ export default {
             }
         ],
         activeClass: [
-            'router-link-exact-active',
-            'router-link-active'
+            'router-link-exact-active', 'router-link-active'
         ],
         nonactiveClass: '',
         iconClass: [
-            'v-icon',
-            'material-icons',
-            'theme--light'
+            'v-icon', 'material-icons', 'theme--light'
         ]
     }),
     methods:{
@@ -65,6 +62,7 @@ export default {
                 if (index == nav.navID) {
                     this.navs[index].isActive = true;
                     this.navs[index].backColor = "";
+                    this.$store.commit('setComp', index);
                 } else {
                     this.navs[index].isActive = false;
                 }       

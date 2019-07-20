@@ -26,7 +26,7 @@ export default {
         Toolbar,
         Content,
         Navbar,        
-    },
+    }
 }
 </script>
 
