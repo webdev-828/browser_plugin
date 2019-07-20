@@ -2,7 +2,7 @@
     <div>
         <div class="v-card v-sheet theme--light">
             <template>
-                <Title :myProp="title"></Title>
+                <Title :myProp="title[activeCmp]"></Title>
             </template>        
             <template>
                 <template v-if="activeCmp == 0">
@@ -44,7 +44,7 @@ export default {
         Card,        
     },
     data:()=> ({
-        title: "Mike's Career Dashboard",
+        title: ["Mike's Career Dashboard", "Jobs and Recruiters", "Mike's Career Contacts", "Activity Logs"]
     }),
     computed: {
         activeCmp() {
