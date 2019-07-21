@@ -44,11 +44,14 @@ export default {
         Card,        
     },
     data:()=> ({
-        title: ["Mike's Career Dashboard", "Jobs and Recruiters", "Mike's Career Contacts", "Activity Logs"]
+        
     }),
     computed: {
         activeCmp() {
             return this.$store.getters.compNum;
+        },
+        title() {
+            return this.$store.getters.title;
         }
     }
 }
