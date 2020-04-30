@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "compare-versions": "^3.4.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-md5": "^0.7.3",
     "jwt-decode": "^2.2.0",
     "lodash.debounce": "^4.0.8",
